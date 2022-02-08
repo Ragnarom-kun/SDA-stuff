@@ -1,0 +1,26 @@
+- bikin HashMap<Integer, LinkedList>, dimana linkedlistnya custom implementation yang bisa nyimpen index "height" itu di heapnya
+- setiap kita mau update heapnya di R, kita ambil elemen minimum di heapnya (minheap), terus abis itu ambil LLnya dari HashMap
+- kita poll item paling kiri di hashmap itu, terus cek kalo misal length LLnya jadi 0. Kalo LLnya 0 kita delete node tingginya dari heap
+- kita reinsert item itu dengan tinggi barunya, kalo misalkan udah ada LL dengan value tinggi yang baru, kita lakuin sortedInsert w/key index node yang mau kita sisipin di HashMap tanah
+
+10:27 Adrian Ardizza: also buat ngeremove node specific dari heap bisa pake ini https://stackoverflow.com/questions/32751620/remove-an-element-from-any-position-in-a-max-heap
+10:27 Adrian Ardizza: tinggal ngehandle edge case kalo index == item terakhir di heap decrement sizenya by 1 and gausah swap
+10:28 Adrian Ardizza: sama kalo misalkan Heap[i] == Heap[1], remove minimumnya (ga usah percolate/ parent ga diapa"in)
+10:38 Adrian Ardizza: ohiya sama jangan execute reheapify kalo ngeremove item terakhir di heapnya
+10:38 Adrian Ardizza: itu buat case cuman ada 1 elemen yang dimasukin
+10:41 Adrian Ardizza: makanya cuman special case buat ekor aja
+10:41 Adrian Ardizza: kalo pake yang dari stackoverflow tadi misal ga dihandle nanti bakal RTE soalnya
+
+12:26 Adrian Ardizza: kalo make template gfg juga swapnya tiati
+12:26 Adrian Ardizza: ganti jadi indexnya, jangan Heap[i]
+
+    while (Heap[parent(i)] > Heap[i] && i > 1) {
+      swap(i, parent(i));
+      i = parent(i);
+    }
+    minHeapify(i);
+
+
+gw langsung set semuanya kapasitas arraynya 200k (array di heap)
+temen gua cuman nambahin cek if min.length == 0 .remove()
+

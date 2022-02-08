@@ -1,0 +1,23 @@
+1
+
+8
+KPK B
+H B
+DS S
+RXH B
+LNJ B
+NZB B
+SSQ S
+NHG B
+1
+9
+H 0
+RXH 1
+SSQ 0
+LNJ 1
+NHG 0
+H 1
+NHG 0
+H 0
+NZB 0
+DUO

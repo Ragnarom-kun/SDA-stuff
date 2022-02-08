@@ -1,0 +1,19 @@
+1
+
+10
+CL B
+YKH B
+NMQ B
+HB S
+GYK B
+VEE B
+TVK B
+KHO S
+LJ B
+YIY B
+1
+3
+YKH 1
+LJ 1
+CL 0
+DEPLOY 5
